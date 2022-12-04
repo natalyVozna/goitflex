@@ -1,0 +1,81 @@
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  height: 30px;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+
+  /*  Animations */
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.nav__black {
+  background-color: #111;
+}
+
+.nav__logo {
+  position: fixed;
+  left: 20px;
+  width: 80px;
+  object-fit: contain;
+}
+.nav__avatar {
+  position: fixed;
+  right: 20px;
+  width: 30px;
+  object-fit: contain;
+}
+
+.logo {
+  width: 100px;
+  height: 40px;
+  color: #d81f26;
+}
+
+.logo__char1 {
+  transform: translateX(-1px) translateY(68px) rotate(-17deg);
+  -webkit-transform: translateX(-1px) translateY(68px) rotate(-17deg);
+}
+.logo__char2 {
+  transform: rotate(8deg);
+}
+.logo__char3 {
+  transform: rotate(10deg);
+}
+.logo__char4 {
+  transform: rotate(12deg);
+}
+
+/* span {
+  display: inline-block;
+  font-family: futura-pt, "Helvetica Neue", sans-serif;
+  font-size: 2.5em;
+  font-weight: 300;
+  margin: 1px;
+}
+
+.logo {
+  display: block;
+  text-shadow: rgba(0, 0, 0, 0.298039) 8px 8px;
+  text-align: center;
+  margin: 20px;
+  padding: 50px 0 50px;
+}
+
+div span {
+  text-shadow: rgba(0, 0, 0, 0.298039) 8px 8px;
+  font-family: futura-pt, "Helvetica Neue", sans-serif;
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+.logo > span:nth-child(1) {
+  -webkit-transform: translateX(-1px) translateY(68px) rotate(-17deg);
+  -webkit-transition: 0s;
+}
+*/
