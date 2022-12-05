@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/goitflex/static/css/main.46e43fa5.css",
+    "main.js": "/goitflex/static/js/main.59a9195b.js",
+    "static/js/787.5caced94.chunk.js": "/goitflex/static/js/787.5caced94.chunk.js",
+    "static/media/Netflix.svg": "/goitflex/static/media/Netflix.d1d5803e03e6e50440e7f20a06912a0c.svg",
+    "index.html": "/goitflex/index.html",
+    "main.46e43fa5.css.map": "/goitflex/static/css/main.46e43fa5.css.map",
+    "main.59a9195b.js.map": "/goitflex/static/js/main.59a9195b.js.map",
+    "787.5caced94.chunk.js.map": "/goitflex/static/js/787.5caced94.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46e43fa5.css",
+    "static/js/main.59a9195b.js"
+  ]
+}
