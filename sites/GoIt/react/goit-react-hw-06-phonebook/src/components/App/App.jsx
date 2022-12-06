@@ -7,27 +7,26 @@ import { Contacts } from '../Contacts/Contacts';
 import { Filter } from '../Filter/Filter';
 import { Title, SubTitle } from './App.styled';
 import { Notification } from '../Notification/Notification';
-
-const CONTACTS = 'contacts';
-
-const getLocalContacts = () => {
-  return JSON.parse(localStorage.getItem(CONTACTS));
-};
+import { useDispatch, useSelector } from 'react-redux';
+import { getContcts, getFilter } from '../../redux/selectors';
+import {
+  addContactAction,
+  deleteContactAction,
+} from '../../redux/contactsSlice';
+import { setFilter } from '../../redux/filterSlice';
 
 export const App = () => {
-  const [contacts, setContacts] = useState(() => getLocalContacts() ?? []);
-  const [filter, setFilter] = useState('');
+  const contacts = useSelector(getContcts);
+  const filter = useSelector(getFilter);
 
-  useEffect(() => {
-    localStorage.setItem(CONTACTS, JSON.stringify(contacts));
-  }, [contacts]);
+  const dispatch = useDispatch();
 
-  const addContact = data => {
+  const onAddContact = data => {
     const isName = contacts.some(
       contact => contact.name.toLowerCase() === data.name.toLowerCase()
     );
     if (!isName) {
-      setContacts(prev => [{ ...data, id: nanoid() }, ...prev]);
+      dispatch(addContactAction(data));
     } else {
       Notify.warning('You already have this contact');
     }
@@ -42,11 +41,11 @@ export const App = () => {
   };
 
   const changeFilter = e => {
-    setFilter(e.currentTarget.value);
+    dispatch(setFilter(e.currentTarget.value));
   };
 
   const removeContact = contactId => {
-    setContacts(prev => prev.filter(contact => contact.id !== contactId));
+    dispatch(deleteContactAction(contactId));
 
     Notify.failure('Contact deleted');
   };
@@ -54,7 +53,7 @@ export const App = () => {
   return (
     <Section>
       <Title>Phonebook</Title>
-      <FormContact onSubmitHandle={addContact} />
+      <FormContact onSubmitHandle={onAddContact} />
       {contacts.length > 0 && (
         <>
           <SubTitle>Contacts</SubTitle>
