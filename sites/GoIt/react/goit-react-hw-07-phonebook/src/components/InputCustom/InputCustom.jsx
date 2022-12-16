@@ -1,4 +1,9 @@
-import { Field, LabelInput, InputStyled } from './InputCustom.styled';
+import {
+  Field,
+  LabelInput,
+  InputStyled,
+  SearchLabel,
+} from './InputCustom.styled';
 import PropTypes from 'prop-types';
 
 export const InputCustom = ({
@@ -12,10 +17,13 @@ export const InputCustom = ({
   required = true,
   pattern,
   handleChangeInput,
+  placeholder,
+  disabled = true,
 }) => {
   return (
     <Field style={fildStyle}>
       {title && <LabelInput htmlFor={inputId}>{title}</LabelInput>}
+      <SearchLabel disabled={disabled} />
       <InputStyled
         type={type}
         name={name}
@@ -23,8 +31,10 @@ export const InputCustom = ({
         value={value}
         style={inputStyle}
         onChange={handleChangeInput}
+        placeholder={placeholder}
         pattern={pattern}
         required={required}
+        disabled={disabled}
       />
     </Field>
   );
@@ -37,6 +47,7 @@ InputCustom.propTypes = {
   value: PropTypes.string,
   required: PropTypes.bool,
   pattern: PropTypes.string,
+  placeholder: PropTypes.string,
   fildStyle: PropTypes.shape({}),
   title: PropTypes.string,
   inputStyle: PropTypes.shape({}),

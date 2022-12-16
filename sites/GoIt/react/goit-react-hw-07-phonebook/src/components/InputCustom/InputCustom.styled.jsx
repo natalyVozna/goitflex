@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ReactComponent as SearchIcon } from '../../images/search-left.svg';
 
 export const Field = styled.div`
   position: relative;
@@ -21,17 +22,25 @@ export const LabelInput = styled.label`
   line-height: 1.4;
   color: var(--text);
 `;
+export const SearchLabel = styled(SearchIcon)`
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 22px;
+  height: 24px;
+
+  fill: ${p => (p.disabled ? '#afb1b8' : '#2c2c2c')};
+`;
 
 export const InputStyled = styled.input`
-  cursor: pointer;
   margin: 0;
-  padding: 14px 0 14px 12px;
+  padding: 6px 0 6px 36px;
   font: inherit;
   background: #ffffff;
   border: 1px solid rgba(18, 18, 18, 0.12);
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 6px;
-  height: 48px;
+  border-radius: 20px;
+  height: 40px;
   width: 100%;
 
   font-weight: 400;
@@ -41,7 +50,7 @@ export const InputStyled = styled.input`
   transition: border 250ms var(--timing-function);
 
   &::placeholder {
-    color: #c4c4c4;
+    color: ${p => (p.disabled ? '#949191' : '#535456')};
   }
 
   &:focus:invalid {
@@ -50,13 +59,4 @@ export const InputStyled = styled.input`
   :valid {
     border: 1px solid var(--dark-green);
   }
-
-  /* &:focus,
-  &:not(:placeholder-shown):valid {
-    border: 1px solid var(--dark-green);
-  } */
-
-  /* &:not(:focus):not(:placeholder-shown):invalid {
-    border: 1px solid var(--red);
-  } */
 `;

@@ -68,7 +68,7 @@ const Row = ({ title, fetchUrl, isLargeRow, notFoundSearch }) => {
           //   src={`${base_url}${
           //     isLargeRow ? movie.poster_path : movie.backdrop_path
           //   }`}
-          //   alt={movie.name}
+
           // />
 
           <MovieCard

@@ -10,7 +10,6 @@ export const Container = styled.div`
   padding: 40px;
   flex-direction: column;
   background-color: var(--background);
-  /* hhh */
 `;
 export const Title = styled.h1`
   display: flex;
