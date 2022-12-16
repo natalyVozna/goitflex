@@ -1,22 +1,31 @@
 import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
-import instance from "../js/axios";
-import requests from "../js/requests";
+import instance from "../../services/axios";
 import css from "./Row.module.css";
+import { useLocation } from "react-router-dom";
+import MovieCard from "../MovieCard/MovieCard";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-const Row = ({ title, fetchUrl, isLargeRow }) => {
+const Row = ({ title, fetchUrl, isLargeRow, notFoundSearch }) => {
   const [movies, setMovies] = useState([]);
-  // const [trailerUrl, setTrailerUrl] = useState("phWxA89Dy94");
   const [trailerUrl, setTrailerUrl] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
     async function fetchMovie() {
-      const request = await instance.get(fetchUrl);
-      setMovies(request.data.results);
-      return request;
+      try {
+        const request = await instance.get(fetchUrl);
+        setMovies(request.data.results);
+        if (request.data.results.length === 0) {
+          notFoundSearch(true);
+        }
+        notFoundSearch(false);
+        return request;
+      } catch {
+        console.log("error");
+      }
     }
 
     fetchMovie();
@@ -46,23 +55,30 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     }
   };
 
-  console.log("trailerUrj", trailerUrl);
-
   return (
     <div className={css.row}>
       <h2>{title}</h2>
       <div className={css.row__posters}>
-        {movies.map((movie) => (
-          <img
+        {movies?.map((movie) => (
+          // <img
+          //   key={movie.id}
+          //   className={`${css.row__poster} ${
+          //     isLargeRow && css.row__posterLarge
+          //   }`}
+          //   src={`${base_url}${
+          //     isLargeRow ? movie.poster_path : movie.backdrop_path
+          //   }`}
+          //   alt={movie.name}
+          // />
+
+          <MovieCard
             key={movie.id}
-            onClick={() => handleClick(movie)}
-            className={`${css.row__poster} ${
-              isLargeRow && css.row__posterLarge
-            }`}
-            src={`${base_url}${
-              isLargeRow ? movie.poster_path : movie.backdrop_path
-            }`}
-            alt={movie.name}
+            title={movie.title}
+            id={movie.id}
+            url={movie.poster_path}
+            backdrop_path={movie.backdrop_path}
+            isLargeRow={isLargeRow}
+            handleClick={() => handleClick(movie)}
           />
         ))}
       </div>

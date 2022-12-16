@@ -1,8 +1,8 @@
-import Row from "../Row/Row";
 import "./App.css";
+import Row from "../Row/Row";
 import requests from "../js/requests";
 import Banner from "../Banner/Banner";
-import Nav from "../Nav/Nav";
+import Nav from "../components/Nav/Nav";
 
 // import axios from "axios";
 
@@ -27,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+// export default App;

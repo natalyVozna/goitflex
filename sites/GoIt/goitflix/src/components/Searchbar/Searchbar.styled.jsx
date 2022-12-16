@@ -1,11 +1,13 @@
-import styled from 'styled-components';
-import { ReactComponent as SearchIcon } from '../../images/search.svg';
+import styled from "styled-components";
+import { ReactComponent as SearchIcon } from "../../images/search.svg";
 
-export const Container = styled.header`
+export const Container = styled.div`
   display: flex;
-  background-color: #2194f2;
-  padding: 16px 40px;
+  padding: 0 20px;
   width: 100%;
+  position: relative;
+  top: -10px;
+  margin-bottom: 20px;
 `;
 
 export const SearchForm = styled.form`
@@ -20,15 +22,18 @@ export const SearchForm = styled.form`
 
 export const SearchButton = styled.button`
   display: inline-flex;
-  width: 48px;
+  width: 90px;
   height: 48px;
   border: 0;
   align-items: center;
   justify-content: center;
-  opacity: 0.6;
+  /* opacity: 0.6; */
+  background-color: ${(p) => p.theme.colors.red};
 
   :hover {
-    opacity: 1;
+    svg {
+      transform: scale(1.07);
+    }
   }
 `;
 

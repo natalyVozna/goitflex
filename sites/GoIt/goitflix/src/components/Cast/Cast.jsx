@@ -1,17 +1,17 @@
-import { CastCard } from 'components/CastCard/CastCard';
-import { NotFound } from 'components/NotFound/NotFound';
-import { useFetch } from 'hooks/useFetch';
-import { useState, useEffect, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
-import { getActors } from 'services/api';
-import { Gallery } from './Cast.styled';
+import { CastCard } from "../../components/CastCard/CastCard";
+import { NotFound } from "../../components/NotFound/NotFound";
+import { useFetch } from "../../hooks/useFetch";
+import { useState, useEffect, useCallback } from "react";
+import { useParams } from "react-router-dom";
+import { getActors } from "../../services/api";
+import { Gallery } from "./Cast.styled";
 
 const Cast = () => {
   const { movieId } = useParams();
   const [actors, setActors] = useState([]);
 
-  const getData = useCallback(params => {
-    getActors(params).then(res => {
+  const getData = useCallback((params) => {
+    getActors(params).then((res) => {
       setActors(res.cast);
     });
   }, []);

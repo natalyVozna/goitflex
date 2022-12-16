@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Gallery = styled.div`
   display: flex;
@@ -9,4 +9,5 @@ export const Gallery = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 10px 40px 40px;
+  color: ${(p) => p.theme.colors.white};
 `;

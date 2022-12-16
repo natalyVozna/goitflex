@@ -1,93 +1,105 @@
 // import { Button } from 'components/Button/Button';
-import { Loader } from 'components/Loader/Loader';
-import MovieCard from 'components/MovieCard/MovieCard';
-import { NotFound } from 'components/NotFound/NotFound';
-import { Searchbar } from 'components/Searchbar/Searchbar';
-import { useFetch } from 'hooks/useFetch';
-import { useCallback, useRef } from 'react';
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { getMovieByQuery } from 'services/api';
-import { Gallery, Container } from './Movies.styled';
+import { Loader } from "../../components/Loader/Loader";
+import MovieCard from "../../components/MovieCard/MovieCard";
+import { NotFound } from "../../components/NotFound/NotFound";
+import { Searchbar } from "../../components/Searchbar/Searchbar";
+import { useFetch } from "../../hooks/useFetch";
+import { useCallback, useRef } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { getMovieByQuery } from "../../services/api";
+import { Gallery, Container } from "./Movies.styled";
+import Banner from "../../components/Banner/Banner";
+import requests from "../../services/requests";
+import Row from "../../components/Row/Row";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   // const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [searchParams] = useSearchParams();
-  const query = searchParams.get('query') ?? '';
-  const page = searchParams.get('page') ?? 1;
+  const query = searchParams.get("query") ?? "";
+  // const page = searchParams.get("page") ?? 1;
+  const [fetchUrl, setFetchUrl] = useState(searchParams.get("query") ?? "");
   const galleryRef = useRef();
 
-  const getMovies = useCallback(params => {
-    getMovieByQuery(params)
-      .then(resMovies => {
-        if (resMovies.results.length === 0) {
-          setError('Nothing found');
-        }
-        if (resMovies.page !== 1) {
-          setMovies(prev => [...prev, ...resMovies.results]);
-        } else {
-          setMovies(resMovies.results);
-          // setTotalPages(resMovies.total_pages);
-        }
-      })
-      .catch(error => setError(error.message))
-      .finally(setLoading(false));
-  }, []);
+  // const getMovies = useCallback((params) => {
+  //   getMovieByQuery(params)
+  //     .then((resMovies) => {
+  //       if (resMovies.results.length === 0) {
+  //         setError("Nothing found");
+  //       }
+  //       if (resMovies.page !== 1) {
+  //         setMovies((prev) => [...prev, ...resMovies.results]);
+  //       } else {
+  //         setMovies(resMovies.results);
+  //         // setTotalPages(resMovies.total_pages);
+  //       }
+  //     })
+  //     .catch((error) => setError(error.message))
+  //     .finally(setLoading(false));
+  // }, []);
 
-  const [fetchData, isLoading, isError] = useFetch(getMovies);
+  // const [fetchData, isLoading, isError] = useFetch(getMovies);
+
+  // useEffect(() => {
+  //   if (movies.length > 0) {
+  //     if (galleryRef.current) {
+  //       window.scrollTo({
+  //         top: galleryRef.current.getBoundingClientRect().height + 100,
+  //         left: 100,
+  //         behavior: "smooth",
+  //       });
+  //     }
+  //   }
+  // }, [movies]);
 
   useEffect(() => {
-    if (movies.length > 0) {
-      if (galleryRef.current) {
-        window.scrollTo({
-          top: galleryRef.current.getBoundingClientRect().height + 100,
-          left: 100,
-          behavior: 'smooth',
-        });
-      }
-    }
-  }, [movies]);
-
-  useEffect(() => {
-    if (query !== '') {
+    if (query !== "") {
       setLoading(true);
-      fetchData({ query, page });
+      // fetchData({ query });
+      setFetchUrl(requests.searchMovies(query));
     } else {
-      setMovies([]);
-      setError('');
+      // setMovies([]);
+      setError("");
       // setTotalPages(1);
     }
-  }, [fetchData, query, page]);
+  }, [query]);
 
-  if (isLoading || loading) {
-    return <Loader />;
-  }
-  if (isError) {
-    return <NotFound text="An error occturred, please try again" />;
-  }
+  const notFoundSearch = (res) => {
+    console.log("res", res);
+    if (res) {
+      setError("No results found for your query");
+    } else {
+      setError("");
+    }
+  };
+  // console.log(fetchUrl, "fetchUrl", notFoundSearch);
 
-  // const onLoadMore = () => {
-  //   setSearchParams({ page: +page + 1, query });
-  // };
-
-  // const isShowBtn = page < totalPages;
+  // if (isLoading || loading) {
+  //   return <Loader />;
+  // }
+  // if (isError) {
+  //   return <NotFound text="An error occturred, please try again" />;
+  // }
 
   return (
     <Container>
+      <Banner />
       <Searchbar />
-      {movies?.length === 0 && error ? (
-        <NotFound text="Nothing found" />
+      {error ? (
+        <NotFound text="No results found for your query" />
       ) : (
         <>
-          <Gallery ref={galleryRef}>
-            {movies?.map(({ title, id, poster_path }) => (
-              <MovieCard key={id} title={title} id={id} url={poster_path} />
-            ))}
-          </Gallery>
-          {/* {isShowBtn && <Button onClickHandle={onLoadMore}>Load More</Button>} */}
+          {query && (
+            <Row
+              title="Search results"
+              notFoundSearch={notFoundSearch}
+              fetchUrl={fetchUrl}
+              isLargeRow={true}
+            />
+          )}
         </>
       )}
     </Container>

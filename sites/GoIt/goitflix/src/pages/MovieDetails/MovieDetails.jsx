@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from "react-router-dom";
 import {
   NavItem,
   SectionInfo,
@@ -12,16 +12,17 @@ import {
   Text,
   AdditionalSection,
   LinkBox,
-} from './MovieDetails.styled';
-import { Suspense, useCallback, useEffect, useState } from 'react';
-import { getFullInfoAboutMovie } from 'services/api';
-import { useFetch } from 'hooks/useFetch';
-import { Loader } from 'components/Loader/Loader';
-import { NotFound } from 'components/NotFound/NotFound';
+} from "./MovieDetails.styled";
+import { Suspense, useCallback, useEffect, useState } from "react";
+import { getFullInfoAboutMovie } from "../../services/api";
+import { useFetch } from "../../hooks/useFetch";
+import { Loader } from "../../components/Loader/Loader";
+import { NotFound } from "../../components/NotFound/NotFound";
+import Banner from "../../components/Banner/Banner";
 
 const navItems = [
-  { href: 'cast', text: 'Cast' },
-  { href: 'reviews', text: 'Reviews' },
+  { href: "cast", text: "Cast" },
+  { href: "reviews", text: "Reviews" },
 ];
 
 const MovieDetails = () => {
@@ -30,7 +31,7 @@ const MovieDetails = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
 
-  const getData = useCallback(params => {
+  const getData = useCallback((params) => {
     getFullInfoAboutMovie(params).then(
       ({
         title,
@@ -42,7 +43,7 @@ const MovieDetails = () => {
         backdrop_path,
       }) => {
         const score = Math.round(vote_average * 10);
-        const allGenres = genres.map(genre => genre.name).join(' ');
+        const allGenres = genres.map((genre) => genre.name).join(" ");
         setMovie({
           title,
           id,
@@ -63,25 +64,28 @@ const MovieDetails = () => {
     fetchData(movieId);
   }, [fetchData, movieId]);
 
-  if (isLoading || loading) {
-    return <Loader />;
-  }
-  if (isError) {
-    return <div>Error</div>;
-  }
+  // if (isLoading || loading) {
+  //   return <Loader />;
+  // }
+  // if (isError) {
+  //   return <div>Error</div>;
+  // }
 
   if (!movie && !loading) {
-    const text = 'No match';
+    const text = "No match";
     return <NotFound text={text} />;
   }
 
   return (
     <Container>
       <>
-        <SectionInfo
+        <GoBack to={location?.state ? location.state.from : "/"}>
+          &#8592; Go back
+        </GoBack>
+        {/* <SectionInfo
           url={`https://image.tmdb.org/t/p/original/${movie.backdropUrl}`}
         >
-          <GoBack to={location?.state ? location.state.from : '/'}>
+          <GoBack to={location?.state ? location.state.from : "/"}>
             &#8592; Go back
           </GoBack>
           <Cover>
@@ -101,7 +105,8 @@ const MovieDetails = () => {
             <SubTitle className="genres">Genres</SubTitle>
             <p>{movie.allGenres}</p>
           </InfoBox>
-        </SectionInfo>
+        </SectionInfo> */}
+        <Banner movieId={movieId} />
         <AdditionalSection className="additional">
           <Title>Additional information</Title>
 

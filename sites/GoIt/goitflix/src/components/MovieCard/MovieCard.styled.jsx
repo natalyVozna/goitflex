@@ -1,32 +1,45 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: calc((100% - 130px) / 6);
-  justify-content: flex-start;
-  height: auto;
-  border: 1px solid rgb(0 0 0 / 10%);
-  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  display: block;
+  position: relative;
+  z-index: 1;
+  max-height: 100px;
+  min-width: 165px;
+  height: ${(p) => (p.isLargeRow ? "250px" : "100px")};
+  /* max-height: 100px; */
+  max-height: ${(p) => (p.isLargeRow ? "250px" : "100px")};
+  margin-right: 10px;
+  transition: transform 350ms;
 
-  border-radius: ${p => p.theme.space[2]}px;
+  :hover {
+    transform: scale(${(p) => (p.isLargeRow ? "1.09" : "1.08")});
+    /* transform: scale(1.08); */
+  }
 
-  transition: transform 250ms ${props => props.theme.colors.timingFunction};
+  svg {
+    position: absolute;
+    z-index: 10;
+    cursor: progress;
+    z-index: 6;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    transition: transform 350ms;
 
-  :hover:not(.active),
-  :focus-visible:not(.active) {
-    transform: scale(1.05);
+    :hover {
+      box-shadow: 1px 1px 4px rgba(216, 31, 38, 0.4);
+    }
   }
 `;
 
 export const Cover = styled.img`
-  display: block;
+  object-fit: contain;
   width: 100%;
-  height: 225px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: ${p => p.theme.space[2]}px;
+  height: 100%;
+  max-height: 100px;
 `;
 
 export const NavItem = styled(Link)`
@@ -38,8 +51,8 @@ export const NavItem = styled(Link)`
   text-decoration: none;
 `;
 export const Title = styled.p`
-  font-size: ${p => p.theme.fontSize.m}px;
-  font-weight: ${p => p.theme.fontWeight.bold};
+  font-size: ${(p) => p.theme.fontSize.m}px;
+  font-weight: ${(p) => p.theme.fontWeight.bold};
   padding: 8px;
   min-height: 70px;
 `;

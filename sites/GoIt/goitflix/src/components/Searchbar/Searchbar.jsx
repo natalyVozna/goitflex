@@ -1,25 +1,25 @@
-import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import {
   SearchForm,
   SearchInput,
   SearchButton,
   SearchLabel,
   Container,
-} from './Searchbar.styled';
+} from "./Searchbar.styled";
 
 export const Searchbar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query');
-  const [search, setSearch] = useState(query ?? '');
+  const query = searchParams.get("query");
+  const [search, setSearch] = useState(query ?? "");
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setSearch(event.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setSearchParams(search !== '' ? { query: search, page: 1 } : {});
+    setSearchParams(search !== "" ? { query: search } : {});
   };
 
   return (
