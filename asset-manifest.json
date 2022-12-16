@@ -1,16 +1,38 @@
 {
   "files": {
-    "main.css": "/goitflex/static/css/main.46e43fa5.css",
-    "main.js": "/goitflex/static/js/main.c06a8dac.js",
-    "static/js/787.338a1318.chunk.js": "/goitflex/static/js/787.338a1318.chunk.js",
-    "static/media/Netflix.svg": "/goitflex/static/media/Netflix.d1d5803e03e6e50440e7f20a06912a0c.svg",
+    "main.css": "/goitflex/static/css/main.d2267d9f.css",
+    "main.js": "/goitflex/static/js/main.f11b3708.js",
+    "static/css/113.3054236e.chunk.css": "/goitflex/static/css/113.3054236e.chunk.css",
+    "static/js/113.5438a644.chunk.js": "/goitflex/static/js/113.5438a644.chunk.js",
+    "static/css/452.5b03fc93.chunk.css": "/goitflex/static/css/452.5b03fc93.chunk.css",
+    "static/js/452.c46678a2.chunk.js": "/goitflex/static/js/452.c46678a2.chunk.js",
+    "static/css/257.a06dff21.chunk.css": "/goitflex/static/css/257.a06dff21.chunk.css",
+    "static/js/257.b5904ab5.chunk.js": "/goitflex/static/js/257.b5904ab5.chunk.js",
+    "static/js/306.7d005400.chunk.js": "/goitflex/static/js/306.7d005400.chunk.js",
+    "static/js/387.961ae9ba.chunk.js": "/goitflex/static/js/387.961ae9ba.chunk.js",
+    "static/js/434.4d2a9bd4.chunk.js": "/goitflex/static/js/434.4d2a9bd4.chunk.js",
+    "static/js/848.21ce1c1a.chunk.js": "/goitflex/static/js/848.21ce1c1a.chunk.js",
+    "static/js/947.0156b12c.chunk.js": "/goitflex/static/js/947.0156b12c.chunk.js",
+    "static/media/play.svg": "/goitflex/static/media/play.037f7d297bf917800ffe6d22a9f16a06.svg",
+    "static/media/logo.svg": "/goitflex/static/media/logo.8bcda601cf91843a35faa05926fbd596.svg",
     "index.html": "/goitflex/index.html",
-    "main.46e43fa5.css.map": "/goitflex/static/css/main.46e43fa5.css.map",
-    "main.c06a8dac.js.map": "/goitflex/static/js/main.c06a8dac.js.map",
-    "787.338a1318.chunk.js.map": "/goitflex/static/js/787.338a1318.chunk.js.map"
+    "static/media/search.svg": "/goitflex/static/media/search.e9f9b615c71b961a2fec073445bb0f3c.svg",
+    "main.d2267d9f.css.map": "/goitflex/static/css/main.d2267d9f.css.map",
+    "main.f11b3708.js.map": "/goitflex/static/js/main.f11b3708.js.map",
+    "113.3054236e.chunk.css.map": "/goitflex/static/css/113.3054236e.chunk.css.map",
+    "113.5438a644.chunk.js.map": "/goitflex/static/js/113.5438a644.chunk.js.map",
+    "452.5b03fc93.chunk.css.map": "/goitflex/static/css/452.5b03fc93.chunk.css.map",
+    "452.c46678a2.chunk.js.map": "/goitflex/static/js/452.c46678a2.chunk.js.map",
+    "257.a06dff21.chunk.css.map": "/goitflex/static/css/257.a06dff21.chunk.css.map",
+    "257.b5904ab5.chunk.js.map": "/goitflex/static/js/257.b5904ab5.chunk.js.map",
+    "306.7d005400.chunk.js.map": "/goitflex/static/js/306.7d005400.chunk.js.map",
+    "387.961ae9ba.chunk.js.map": "/goitflex/static/js/387.961ae9ba.chunk.js.map",
+    "434.4d2a9bd4.chunk.js.map": "/goitflex/static/js/434.4d2a9bd4.chunk.js.map",
+    "848.21ce1c1a.chunk.js.map": "/goitflex/static/js/848.21ce1c1a.chunk.js.map",
+    "947.0156b12c.chunk.js.map": "/goitflex/static/js/947.0156b12c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.46e43fa5.css",
-    "static/js/main.c06a8dac.js"
+    "static/css/main.d2267d9f.css",
+    "static/js/main.f11b3708.js"
   ]
 }
