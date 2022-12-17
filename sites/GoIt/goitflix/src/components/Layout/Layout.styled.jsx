@@ -6,7 +6,7 @@ export const Box = styled.div`
   height: 100%;
   min-height: 100vh;
   background-color: #111;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
 `;
 export const Content = styled.div`
   display: flex;
