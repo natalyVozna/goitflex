@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goitflex/static/css/main.d2267d9f.css",
-    "main.js": "/goitflex/static/js/main.d1b167ff.js",
+    "main.js": "/goitflex/static/js/main.d882e07e.js",
     "static/css/113.3054236e.chunk.css": "/goitflex/static/css/113.3054236e.chunk.css",
     "static/js/113.5438a644.chunk.js": "/goitflex/static/js/113.5438a644.chunk.js",
     "static/css/452.5b03fc93.chunk.css": "/goitflex/static/css/452.5b03fc93.chunk.css",
@@ -18,7 +18,7 @@
     "index.html": "/goitflex/index.html",
     "static/media/search.svg": "/goitflex/static/media/search.e9f9b615c71b961a2fec073445bb0f3c.svg",
     "main.d2267d9f.css.map": "/goitflex/static/css/main.d2267d9f.css.map",
-    "main.d1b167ff.js.map": "/goitflex/static/js/main.d1b167ff.js.map",
+    "main.d882e07e.js.map": "/goitflex/static/js/main.d882e07e.js.map",
     "113.3054236e.chunk.css.map": "/goitflex/static/css/113.3054236e.chunk.css.map",
     "113.5438a644.chunk.js.map": "/goitflex/static/js/113.5438a644.chunk.js.map",
     "452.5b03fc93.chunk.css.map": "/goitflex/static/css/452.5b03fc93.chunk.css.map",
@@ -33,6 +33,6 @@
   },
   "entrypoints": [
     "static/css/main.d2267d9f.css",
-    "static/js/main.d1b167ff.js"
+    "static/js/main.d882e07e.js"
   ]
 }
