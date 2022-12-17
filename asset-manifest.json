@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goitflex/static/css/main.d2267d9f.css",
-    "main.js": "/goitflex/static/js/main.f11b3708.js",
+    "main.js": "/goitflex/static/js/main.d1b167ff.js",
     "static/css/113.3054236e.chunk.css": "/goitflex/static/css/113.3054236e.chunk.css",
     "static/js/113.5438a644.chunk.js": "/goitflex/static/js/113.5438a644.chunk.js",
     "static/css/452.5b03fc93.chunk.css": "/goitflex/static/css/452.5b03fc93.chunk.css",
@@ -12,13 +12,13 @@
     "static/js/387.961ae9ba.chunk.js": "/goitflex/static/js/387.961ae9ba.chunk.js",
     "static/js/434.4d2a9bd4.chunk.js": "/goitflex/static/js/434.4d2a9bd4.chunk.js",
     "static/js/848.21ce1c1a.chunk.js": "/goitflex/static/js/848.21ce1c1a.chunk.js",
-    "static/js/947.0156b12c.chunk.js": "/goitflex/static/js/947.0156b12c.chunk.js",
+    "static/js/947.e7bafbb5.chunk.js": "/goitflex/static/js/947.e7bafbb5.chunk.js",
     "static/media/play.svg": "/goitflex/static/media/play.037f7d297bf917800ffe6d22a9f16a06.svg",
     "static/media/logo.svg": "/goitflex/static/media/logo.8bcda601cf91843a35faa05926fbd596.svg",
     "index.html": "/goitflex/index.html",
     "static/media/search.svg": "/goitflex/static/media/search.e9f9b615c71b961a2fec073445bb0f3c.svg",
     "main.d2267d9f.css.map": "/goitflex/static/css/main.d2267d9f.css.map",
-    "main.f11b3708.js.map": "/goitflex/static/js/main.f11b3708.js.map",
+    "main.d1b167ff.js.map": "/goitflex/static/js/main.d1b167ff.js.map",
     "113.3054236e.chunk.css.map": "/goitflex/static/css/113.3054236e.chunk.css.map",
     "113.5438a644.chunk.js.map": "/goitflex/static/js/113.5438a644.chunk.js.map",
     "452.5b03fc93.chunk.css.map": "/goitflex/static/css/452.5b03fc93.chunk.css.map",
@@ -29,10 +29,10 @@
     "387.961ae9ba.chunk.js.map": "/goitflex/static/js/387.961ae9ba.chunk.js.map",
     "434.4d2a9bd4.chunk.js.map": "/goitflex/static/js/434.4d2a9bd4.chunk.js.map",
     "848.21ce1c1a.chunk.js.map": "/goitflex/static/js/848.21ce1c1a.chunk.js.map",
-    "947.0156b12c.chunk.js.map": "/goitflex/static/js/947.0156b12c.chunk.js.map"
+    "947.e7bafbb5.chunk.js.map": "/goitflex/static/js/947.e7bafbb5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d2267d9f.css",
-    "static/js/main.f11b3708.js"
+    "static/js/main.d1b167ff.js"
   ]
 }
