@@ -7,7 +7,7 @@ export const Container = styled.div`
   z-index: 1;
   max-height: 100px;
   min-width: 165px;
-  height: ${(p) => (p.isLargeRow ? "250px" : "100px")};
+  /* height: ${(p) => (p.isLargeRow ? "250px" : "100px")}; */
   /* max-height: 100px; */
   max-height: ${(p) => (p.isLargeRow ? "250px" : "100px")};
   margin-right: 10px;
